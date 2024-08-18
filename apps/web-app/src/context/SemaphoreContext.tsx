@@ -26,7 +26,7 @@ export const SemaphoreContextProvider: React.FC<ProviderProps> = ({ children }) 
     const [_feedback, setFeedback] = useState<string[]>([])
 
     const refreshUsers = useCallback(async (): Promise<void> => {
-        const semaphore = new SemaphoreEthers(ethereumNetwork, {
+        const semaphore = new SemaphoreEthers('https://public-en.kairos.node.kaia.io', {
             address: process.env.NEXT_PUBLIC_SEMAPHORE_CONTRACT_ADDRESS,
             projectId: process.env.NEXT_PUBLIC_INFURA_API_KEY
         })
@@ -44,7 +44,7 @@ export const SemaphoreContextProvider: React.FC<ProviderProps> = ({ children }) 
     )
 
     const refreshFeedback = useCallback(async (): Promise<void> => {
-        const semaphore = new SemaphoreEthers(ethereumNetwork, {
+        const semaphore = new SemaphoreEthers('https://public-en.kairos.node.kaia.io', {
             address: process.env.NEXT_PUBLIC_SEMAPHORE_CONTRACT_ADDRESS,
             projectId: process.env.NEXT_PUBLIC_INFURA_API_KEY
         })

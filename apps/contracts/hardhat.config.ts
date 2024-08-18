@@ -46,6 +46,11 @@ function getNetworks(): NetworksUserConfig {
             url: "https://arb1.arbitrum.io/rpc",
             chainId: 42161,
             accounts
+        },
+        klaytn: {
+            url: "https://public-en.kairos.node.kaia.io",
+            chainId: 1001,
+            accounts
         }
     }
 }

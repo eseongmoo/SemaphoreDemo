@@ -12,7 +12,8 @@ export async function POST(req: NextRequest) {
     const infuraApiKey = process.env.NEXT_PUBLIC_INFURA_API_KEY as string
     const contractAddress = process.env.NEXT_PUBLIC_FEEDBACK_CONTRACT_ADDRESS as string
 
-    const provider = new InfuraProvider(ethereumNetwork, infuraApiKey)
+    //const provider = new InfuraProvider(ethereumNetwork, infuraApiKey)
+    const provider = new JsonRpcProvider('https://public-en.kairos.node.kaia.io')
 
     const signer = new Wallet(ethereumPrivateKey, provider)
     const contract = new Contract(contractAddress, Feedback.abi, signer)

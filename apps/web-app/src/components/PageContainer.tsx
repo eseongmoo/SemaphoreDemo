@@ -20,6 +20,8 @@ export default function PageContainer({
                 return `https://sepolia.etherscan.io/address/${address}`
             case "arbitrum-sepolia":
                 return `https://sepolia.arbiscan.io/address/${address}`
+            case "klaytn":
+                return `https://baobab.klaytnfinder.io/account/${address}`
             default:
                 return ""
         }
