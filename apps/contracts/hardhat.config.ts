@@ -52,24 +52,24 @@ function getNetworks(): NetworksUserConfig {
 
 const hardhatConfig: HardhatUserConfig = {
     solidity: "0.8.23",
-    defaultNetwork: process.env.DEFAULT_NETWORK || "localhost",
+    defaultNetwork: process.env.DEFAULT_NETWORK,
     networks: {
         hardhat: {
             chainId: 1337
         },
         ...getNetworks()
     },
-    gasReporter: {
-        currency: "USD",
-        enabled: process.env.REPORT_GAS === "true",
-        coinmarketcap: process.env.COINMARKETCAP_API_KEY
-    },
+    // gasReporter: {
+    //     currency: "USD",
+    //     enabled: process.env.REPORT_GAS === "true",
+    //     coinmarketcap: process.env.COINMARKETCAP_API_KEY
+    // },
     typechain: {
         target: "ethers-v6"
     },
-    etherscan: {
-        apiKey: process.env.ETHERSCAN_API_KEY
-    },
+    // etherscan: {
+    //     apiKey: process.env.ETHERSCAN_API_KEY
+    // },
     sourcify: {
         enabled: true
     }

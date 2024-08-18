@@ -19,10 +19,7 @@ interface ProviderProps {
     children: ReactNode
 }
 
-const ethereumNetwork =
-    process.env.NEXT_PUBLIC_DEFAULT_NETWORK === "localhost"
-        ? "http://127.0.0.1:8545"
-        : process.env.NEXT_PUBLIC_DEFAULT_NETWORK
+const ethereumNetwork = process.env.NEXT_PUBLIC_DEFAULT_NETWORK
 
 export const SemaphoreContextProvider: React.FC<ProviderProps> = ({ children }) => {
     const [_users, setUsers] = useState<any[]>([])
